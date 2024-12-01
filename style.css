@@ -1,0 +1,142 @@
+/* Tổng quan */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background hiệu ứng */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(5px) brightness(0.8) opacity(0.9); /* Điều chỉnh hiệu ứng */
+  z-index: -1;
+}
+
+/* Container chính */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Nội dung ẩn ban đầu (animation) */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 90%;
+  opacity: 0; /* Ban đầu ẩn */
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.content.show {
+  opacity: 1;
+  transform: translateY(0); /* Hiển thị nội dung */
+}
+
+/* Ảnh chân dung */
+.image-container {
+  flex: 0 0 150px;
+  margin-right: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #ff4081;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Nội dung văn bản */
+.text-content {
+  flex: 1;
+}
+
+.text-content h1 {
+  font-size: 2em;
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Button trong shape */
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #ff4081;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background: #ff79a9;
+}
+
+/* Trang video */
+body.video-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video fix theo chiều cao màn hình */
+.video-container video {
+  height: 100vh;
+  width: auto;
+  object-fit: contain; /* Giữ đúng tỷ lệ */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Button quay lại */
+.video-container .button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff4081;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.video-container .button:hover {
+  background: #ff79a9;
+}
